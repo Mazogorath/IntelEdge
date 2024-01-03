@@ -15,29 +15,29 @@ public:
 };
 
 int main(void) {
-	Book* book = new Book [10];
-	cout << "ÀÔ°íÇÒ Ã¥À» ÀÔ·ÂÇÏ¼¼¿ä. ³âµµ¿¡ -1 ÀÔ·ÂÇÏ¸é Á¾·á";
+	Book* book = new Book[10];
+	cout << "ìž…ê³ í•  ì±…ì„ ìž…ë ¥í•˜ì„¸ìš”. ë…„ë„ì— -1 ìž…ë ¥í•˜ë©´ ì¢…ë£Œ";
 	string name, author;
 	int year = 0;
 	int i = 0;
 	while (1) {
-		cout << "³âµµ >>";
+		cout << "ë…„ë„ >>";
 		cin >> year;
 		if (year == -1) break;
-		cout << "Ã¥ ÀÌ¸§ >>";
+		cout << "ì±… ì´ë¦„ >>";
 		cin >> name;
-		cout << "ÀúÀÚ >>";
+		cout << "ì €ìž >>";
 		cin.ignore(numeric_limits<streamsize>::max(), '\n');
 		cin >> author;
 		book[i++].setBook(name, author, year);
 	}
-	cout << "ÀÔ°íµÈ Ã¥Àº" << i << "±Ç";
-	cout << "°Ë»öÇÏ°íÀÚ ÇÏ´Â ÀúÀÚ ÀÌ¸§ ÀÔ·Â";
+	cout << "ìž…ê³ ëœ ì±…ì€" << i << "ê¶Œ";
+	cout << "ê²€ìƒ‰í•˜ê³ ìž í•˜ëŠ” ì €ìž ì´ë¦„ ìž…ë ¥";
 	cin >> author;
 	for (int x = 0; x < i; x++) {
 		if (author == book[x].getAuthor()) book[x].getBook();
 	}
-	cout << "°Ë»öÇÏ°íÀÚ ÇÏ´Â ³âµµ ÀÔ·Â";
+	cout << "ê²€ìƒ‰í•˜ê³ ìž í•˜ëŠ” ë…„ë„ ìž…ë ¥";
 	cin >> year;
 	for (int x = 0; x < i; x++) {
 		if (year == book[x].getYear()) book[x].getBook();
